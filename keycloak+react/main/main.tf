@@ -8,6 +8,11 @@ module "ingress_controller" {
   kube_config_path=module.cluster.kind_cluster
 }
 
+module "kubernetes_secret" {
+  source = "../modules/secret"
+  kube_config_path = module.cluster.kind_cluster
+}
+
 module "keycloak" {
   source = "../modules/keycloak"
   kube_config_path = module.cluster.kind_cluster
