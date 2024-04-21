@@ -86,7 +86,7 @@ resource "kubernetes_ingress_v1" "keycloak_ingress" {
             service {
               name = kubernetes_service.keycloak_service.metadata[0].name
               port {
-                number = kubernetes_service.keycloak_service.spec[0].port
+                number = kubernetes_service.keycloak_service.spec[0].port[0].port
               }
             }
           }

@@ -71,7 +71,7 @@ resource "kubernetes_ingress_v1" "react_ingress" {
             service {
               name = kubernetes_service.react_service.metadata[0].name
               port {
-                number = kubernetes_service.react_service.spec[0].port
+                number = kubernetes_service.react_service.spec[0].port[0].port
               }
             }
           }
